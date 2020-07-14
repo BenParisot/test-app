@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Champion } from '../champion'
+import { CHAMPIONS } from '../mock-CHAMPIONS'
 
 @Component({
   selector: 'app-champions',
@@ -11,6 +12,8 @@ export class ChampionsComponent implements OnInit {
     id: 1,
     name: 'Spider-Man'
   };
+  champions = CHAMPIONS;
+
   constructor() { }
 
   ngOnInit(): void {
