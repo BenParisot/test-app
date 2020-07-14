@@ -13,6 +13,10 @@ export class ChampionsComponent implements OnInit {
     name: 'Spider-Man'
   };
   champions = CHAMPIONS;
+  selectedChampion: Champion;
+  onSelect(champion: Champion): void {
+    this.selectedChampion = champion;
+  }
 
   constructor() { }
 

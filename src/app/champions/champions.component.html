@@ -1,12 +1,14 @@
 <h2>My Champions:</h2>
 <ul class="champions">
-  <li *ngFor="let champion of champions">
+  <li *ngFor="let champion of champions" (click)="onSelect(champion)">
     <span class="badge">{{champion.id}}</span> {{champion.name}}
   </li>
 </ul>
 
-<h2>{{champion.name | uppercase }} Detail</h2>
-<div><span>id: </span>{{champion.id}}</div>
-<div><label>name: 
-  <input [(ngModel)]="champion.name" placeholder="champion.name" />
-</label></div>
+<div *ngIf="selectedChampion">
+  <h2>{{selectedChampion.name | uppercase }} Detail</h2>
+  <div><span>id: </span>{{selectedChampion.id}}</div>
+  <div><label>name: 
+    <input [(ngModel)]="selectedChampion.name" placeholder="name" />
+  </label></div>
+</div>
